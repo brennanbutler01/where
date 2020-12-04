@@ -1,0 +1,410 @@
+* {
+	list-style: none;
+	line-height: 1.3;
+	font-family: 'UniversCondensed-Medium', sans-serif;
+	text-transform: uppercase;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+*::-webkit-scrollbar {
+	display: none;
+}
+/* font converted using font-converter.net. thank you! */
+@font-face {
+	font-family: "UniversCondensed-Medium";
+  	src: url("./fonts/UNVR57X.woff") format("woff");
+  
+	font-weight: normal;
+	font-style: normal;
+  }
+body {
+	position: relative;
+	height: auto;
+	min-height: 100% !important;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* boxes */
+.left-top,
+.right-top {
+	top: 27vh;
+}
+.left-mid,
+.right-mid {
+	top: 37vh;
+}
+.left-bot,
+.right-bot {
+	top: 47vh;
+}
+.left-top,
+.left-mid,
+.left-bot {
+	left: 0;
+}
+.right-top,
+.right-mid,
+.right-bot {
+	right: 0;
+}
+.left {
+	grid-area: left;
+}
+.right {
+	grid-area: right;
+}
+.static-page-box {
+	position: absolute;
+	width: 5vw;
+	height: 5vh;
+	z-index: 0;
+	min-width: 25px;
+}
+/* background */
+.bg-img {
+	background-image: url('../images/whereshop.png');
+	background-color: #cccccc;
+	background-position: center;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	-o-background-size:cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: cover;
+	min-width: 320px;
+	position: relative;
+	height: 100vh;
+}
+
+/* navbar container */
+.nav-container {
+	width: 100%;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 30498209348329482;
+	background-color: white;
+	padding: 1vh .5vw;
+}
+
+/* navbar */
+nav {
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+}
+
+/* LEFT HEADER SECTION */
+.left-menu {
+	grid-column: 1;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 90%;
+}
+
+/* NAVBAR TITLE */
+.title {
+	grid-column: 2;
+	font-size: 2.75rem;
+	padding: 1vh 0;
+	text-align: center;
+	font-weight: 900;
+	margin: auto 6vh;
+}
+
+/* RIGHT HEADER SECTION */
+.right-menu {
+	grid-column: 3;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 90%;
+	margin-left: auto;
+	margin-right: 0;
+}
+
+/* navbar items */
+nav a {
+	color: black;
+	text-decoration: none;
+	transition: 0.3s all ease-in-out;
+	font-size: .95rem;
+	letter-spacing: 0.1px;
+	white-space: nowrap;
+}
+/* hover on nav items */
+nav a:not(.title):hover {
+	opacity: 0.7;
+}
+
+.hidden {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.visible {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 1s linear;
+}
+/* MENU TOGGLE */
+#nav-toggle,
+.menu {
+	display: none;
+}
+
+/* The side navigation menu */
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: whitesmoke;
+	opacity: 90%;
+	overflow-x: hidden;
+	padding-top: 60px;
+	transition: 0.4s;
+}
+
+/* The navigation menu links */
+.sidenav a {
+	padding: 10px 10px 8px 18px;
+	text-decoration: none;
+	font-size: 0.8rem;
+	color: #818181;
+	display: block;
+	transition: 0.4s;
+}
+
+.sidenav a:hover {
+	color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	float: right;
+	font-size: 2rem;
+	margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+	transition: margin-left 0.3s;
+}
+
+.footer-container {
+	width: 100%;
+	padding: 4vh 1.5vw 6vh 4vw ;
+}
+
+footer {
+	display: grid;
+	grid-template-columns: 0.5fr 0.4fr 0.4fr 1.1fr 1.5fr;
+	max-width: 100vw;
+	column-gap: 1vw; }
+/* footer section headers */
+footer ul:before {
+	content: attr(aria-label);
+	font-size: 90%;
+	font-weight: 600;
+}
+#email::before {
+	font-weight: unset;
+}
+::placeholder {
+	font-size: 14px;
+	color: black;
+	text-transform: uppercase;
+}
+
+/* footer links */
+
+footer ul li a {
+	text-decoration: none;
+	font-size: 70%;
+	color: black;
+}
+/* first footer link in each list */
+
+footer ul li {
+	padding-top: 0.25vh;
+}
+footer ul li:first-of-type {
+	padding-top: 2vh;
+}
+
+footer ul li a:hover {
+	opacity: 50%;
+}
+/* search bar */
+#newsletterSignup {
+	padding: 11px;
+	margin-top: 1vh;
+	width: 65%;
+	text-transform: none;
+	border: 1px solid black;
+}
+
+#footerButton {
+	border: 1px solid black;
+	background-color: white;
+	color: black;
+	padding: 11px 35px;
+	font-size: 14px;
+	cursor: pointer;
+	letter-spacing: 0.5px;
+	margin-left: 1vw;
+}
+
+#footerButton:hover {
+	background: #e7e7e7;
+}
+
+.mediaIcons i:first-of-type {
+	margin-right: 15px;
+}
+.mediaIcons i{
+	font-size: 30px;
+	padding-top: 4vh;
+}
+.mediaLink {
+	text-decoration: none;
+	color: initial;
+}
+.leftFooter {
+	grid-column: 1;
+}
+.leftMiddleFooter {
+	grid-column: 2;
+}
+.middleFooter {
+	grid-column: 3;
+}
+
+.rightFooter {
+	grid-column: 5;
+	height: fit-content;
+}
+
+@media only screen and (max-width: 1200px) {
+	.mediaIcons i{
+		padding-top: 2vh;
+	}
+}
+
+@media only screen and (max-width: 1050px) {
+	/* header */
+	.menu {
+		display: inline-block;
+	}
+	.left-menu {
+		display: none;
+	}
+	.right-menu {
+		display: none;
+	}
+	.title {
+		font-size: 2.5rem;
+		margin: 0;
+	}
+	.nav {
+		margin-top: 0;
+		width: 100%;
+	}
+	.menu span i {
+		padding: 3vw;
+	}
+	#newsletterSignup {
+		width: 80%;
+	}
+	#footerButton {
+		margin-left: 0;
+		margin-top: 2vh;
+	}
+}
+@media only screen and (max-width: 750px) {
+	#newsletterSignup {
+		width: 70%;
+		margin: 1vh auto;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	footer {
+		display: grid;
+		grid-template-areas:
+			'a'
+			'b'
+			'c'
+			'd'
+			'f';
+		grid-template-columns: 1fr;
+		margin-top: 4%;
+	}
+
+	.leftFooter {
+		grid-area: a;
+		margin-left: 0;
+		text-align: center;
+	}
+
+	ul {
+		margin-top: 2%;
+	}
+	footer ul li:first-of-type {
+		padding-top: 2px;
+	}
+	footer ul li {
+		line-height: 1.5;
+	}
+	#footerButton {
+		margin-top: 2%;
+		margin-bottom: 2%;
+		display: block;
+		margin: 1vh auto;
+	}
+	.leftMiddleFooter {
+		grid-area: b;
+		text-align: center;
+	}
+	.middleFooter {
+		grid-area: c;
+		text-align: center;
+	}
+	.rightFooter {
+		grid-area: d;
+		text-align: center;
+		padding-left: 0;
+	}
+
+
+	.mediaIcons {
+		grid-area: f;
+		padding-left: 0;
+		margin: 0 auto;
+	}
+
+	nav {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 10%;
+	}
+	.sidenav a {
+		font-size: 0.8rem;
+	}
+}

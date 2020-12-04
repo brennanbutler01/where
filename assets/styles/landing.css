@@ -1,0 +1,185 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+	list-style: none;
+	line-height: 1.3;
+	font-family: 'UniversCondensed-Medium', sans-serif;
+	text-transform: uppercase;
+}
+/* font converted using font-converter.net. thank you! */
+@font-face {
+	font-family: "UniversCondensed-Medium";
+  	src: url("./fonts/UNVR57X.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+  }
+  
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    grid-template-areas: 
+    'blank'
+    'center'
+    'login'
+    ;
+    display: grid;
+    max-width: 100vw;
+}
+.blank {
+    grid-area: blank;
+    height: 15vh;
+}
+.center {
+    grid-area: center;
+    display: grid;
+    text-align: center;
+    height: fit-content;
+}
+.title {
+    font-size: 4.5rem;
+    text-decoration: none;
+    color: unset;
+    font-weight: bold;
+    padding-bottom: 3vh;
+}
+.stayUpdated {
+    font-size: 1.25rem;
+    padding-bottom: 4vh;
+}
+#newsletterSignup {
+	padding: 9px;
+    width: 20%;
+    min-width: 175px;
+    border: 1px black solid;
+}
+#newsletterSignup::placeholder {
+    color: black;
+    opacity: 1;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+#signupButton {
+	border: 1px solid black;
+	background-color: white;
+	color: black;
+	padding: 9px 35px;
+	font-size: 13px;
+	cursor: pointer;
+	letter-spacing: 0.5px;
+    margin-left: 1vw;
+    font-weight: bold;
+}
+
+#signupButton:hover {
+	background: #e7e7e7;
+}
+.login {
+    grid-area: login;
+    display: flex;
+    justify-content: flex-end;  
+    align-items: flex-end;
+    padding-bottom: 3vh;
+    margin: 0 2vw;
+}
+#loginButton {
+    border: 1px solid black;
+	background-color: white;
+	color: black;
+	padding: 10px 10px;
+	font-size: 13px;
+	cursor: pointer;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+}
+#loginButton:hover {
+    background: #e7e7e7;
+}
+
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #7C9768;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color:  #E4542E;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+@media only screen  and (max-width: 450px) {
+    .title {
+        font-size: 4rem;
+    }
+    .wrapper {
+    grid-template-areas: 
+    'center'
+    'login';
+    grid-template-rows: .8fr;
+    height: 50vh;
+    row-gap: 15vh;
+    }
+    .center{
+        padding-top: 8vh;
+    }
+    
+    
+}

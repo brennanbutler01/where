@@ -1,0 +1,122 @@
+/* store content wrapper */
+.wrapper {
+	display: grid;
+	grid-template-areas: 'left content right';
+	grid-template-columns: 0.125fr 1fr 0.125fr;
+	width: 100%;
+	margin: 1vh 0;
+	position: relative;
+}
+
+.grid {
+	grid-area: content;
+	padding: 7vh 15% 0;
+	display: grid;
+	grid-template-areas:
+		'lost lost'
+		'texts mail';
+	grid-template-columns: 20vw 20vw;
+	height: 90vh;
+	position: relative;
+	justify-content: center;
+	align-content: flex-start;
+	width: 100%;
+}
+
+.lost {
+	grid-area: lost;
+	justify-self: center;
+	align-self: flex-end;
+}
+.lost > h3 {
+	font-size: 0.85rem;
+	font-weight: 500;
+	padding-bottom: 15vh;
+}
+
+.leftcontact {
+	grid-area: texts;
+}
+.rightcontact {
+    grid-area: mail;
+}
+
+.circle {
+	background-color: #f1f1f1;
+	border-radius: 50%;
+	height: 10vw;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 10vw;
+	margin: 0 auto 3vh auto;
+}
+.icon:hover {
+	background-color: black;
+}
+.icon {
+	height: 4vw;
+	min-width: 30px;
+	width: 4vw;
+	min-height: 30px;
+}
+
+p {
+	padding-top: 10px;
+	font-size: 0.8rem;
+}
+#emailcontact {
+	text-decoration: none;
+	color: initial;
+}
+#textcontact {
+	color: initial;
+	text-decoration: none;
+}
+.contactinfo {
+	text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+	.grid {
+		column-gap: 5vw;
+    }
+    .circle {
+		min-width: 100px;
+		min-height: 100px;
+	}
+}
+@media only screen and (max-width: 750px) {
+	p {
+		font-size: 0.75rem;
+	}
+	.grid {
+		height: 70vh;
+	}
+
+}
+
+@media only screen and (max-width: 500px) {
+	.grid {
+        column-gap: 10vw;
+        padding-top: 10vh;
+	}
+	.lost > h3 {
+		padding-bottom: 17vh;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	.grid {
+       padding: 7vh 5% 0;
+       column-gap: 15vw;
+    }
+    .circle {
+        min-width: 70px;
+        min-height: 70px;
+    }
+    p {
+        font-size: .7rem;
+    }
+}

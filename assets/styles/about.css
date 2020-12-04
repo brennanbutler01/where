@@ -1,0 +1,30 @@
+/* store content wrapper */
+.wrapper {
+    display: grid;
+    grid-template-areas: "left content right";
+    grid-template-columns: .1fr 1fr .1fr;
+    width: 100%;
+    margin: 1vh 0;
+    position: relative;
+}
+p {
+    text-align: left;
+    font-size: .90rem;
+    line-height: 1.4;
+}
+.grid {
+    grid-area: content;
+    padding: 7vh 22% 0 22%;
+    grid-template-columns: 1fr ;
+    text-align: left;
+    background-color: white;
+    display: grid;
+    justify-content: center;
+    height: 90vh;
+    overflow-y: auto;
+}
+@media only screen and (max-width: 750px) {
+    .grid {
+        padding: 7vh 11% 0 11% ;
+    }
+}

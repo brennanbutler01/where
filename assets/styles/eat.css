@@ -1,0 +1,140 @@
+/* store content wrapper */
+.wrapper {
+    display: grid;
+    grid-template-areas: "left content right";
+    grid-template-columns: .125fr 1fr .125fr;
+    width: 100%;
+    margin: 1vh 0;
+    position: relative;
+}
+
+.grid {
+    display: grid;
+    grid-template-areas: "tl tr"
+    "bl br ";
+    grid-template-columns: 38vw 38vw;
+    padding: 7vh 15% 0;
+    row-gap: 4vh;
+    grid-area: content;
+    position: relative;
+    background-color: white;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 90vh;
+    overflow-y: scroll;
+}
+
+.text-content ul:before {
+	content: attr(aria-label);
+	font-size: 100%;
+    font-weight: bold;
+}
+.image-content{
+    width: 100%;
+    height: 60vh;
+}
+
+.text-content {
+    text-align: left;
+    font-size: .85rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 5%;
+    height: 100%;
+}
+
+.text-content li {
+    width: 100%;
+    padding-top: 1.5vh;
+    font-size: .80rem;
+    text-align: left;
+}
+ .menuHeader{
+   display: block;
+   padding-bottom: 5vh;
+}
+.menuLink a{
+    text-decoration: unset;
+    text-decoration: underline;
+    color: black;
+    position: relative;
+    z-index: 500000;
+}
+
+
+#secondRow{
+    margin-right: 5% ;
+    text-align: right;
+} 
+#secondRow li {
+    margin-left: 1vw;
+}
+.secondImg {
+    padding-top: 4.5vh;
+}
+.secondRow {
+    margin-left: 1vw;
+}
+.top-left{
+    grid-area: tl;
+    height: fit-content;
+}
+.top-right{
+    grid-area:tr;
+    height: 100%;
+}
+.bottom-left{
+    grid-area: bl;
+    height: 100%;
+}
+.bottom-right{
+    grid-area: br;
+    height: fit-content;
+}
+
+@media only screen and (max-width:900px) {
+    .grid {
+        grid-template-areas: 
+        "tl"
+        "tr"
+        "br"
+        "bl";
+        grid-template-columns: 1fr;
+        padding: 7vh 2% 0;
+        align-content: space-between;
+
+    }
+    .text-content {
+        width: 100%;
+        margin-left: 0;
+    }
+    #secondRow {
+        text-align: left;
+        margin-right: 0;
+    }
+    .secondRow {
+        margin-left: 0;
+    }
+    #secondRow li {
+        margin-left: 0;
+    }
+    .secondImg {
+        padding: 0;
+    }
+
+    .menuHeader {
+        padding-top: 2vh;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    .grid {
+        padding: 7vh 5vw 0;
+    }
+    .image-content {
+        object-fit: contain;
+        height: 100%;
+    }
+}
+

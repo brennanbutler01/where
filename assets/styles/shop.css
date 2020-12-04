@@ -1,0 +1,184 @@
+/* store content wrapper */
+.wrapper {
+	display: grid;
+	grid-template-areas: 'left content right';
+	grid-template-columns: 0.1fr 1fr 0.1fr;
+	margin: 1vh 0;
+	position: relative;
+	width: 100%;
+}
+
+/* store grid */
+.grid {
+	display: grid;
+	grid-template-areas:
+		'tl tr'
+		'bl br';
+	grid-template-columns: 35vw 35vw;
+	padding: 7vh 10% 0;
+	column-gap: 3%;
+	row-gap: 5vh;
+	grid-area: content;
+	position: relative;
+	width: 100%;
+	background-color: white;
+	justify-content: space-around;
+	height: 90vh;
+	overflow-y: scroll;
+}
+/* store grid areas */
+
+.top-left-store {
+	grid-area: tl;
+	display: grid;
+	grid-template-areas: 'image text';
+	grid-template-columns: 1.15fr 1fr;
+	height: fit-content;
+}
+
+.top-right-store {
+	grid-area: tr;
+	display: grid;
+	grid-template-areas: 'image text';
+	grid-template-columns: 1.15fr 1fr;
+	height: fit-content;
+}
+.bottom-left-store {
+	grid-area: bl;
+	display: grid;
+	grid-template-areas: 'image text';
+	grid-template-columns: 1.15fr 1fr;
+	height: fit-content;
+}
+.bottom-right-store {
+	grid-area: br;
+	display: grid;
+	grid-template-areas: 'image text';
+	grid-template-columns: 1.15fr 1fr;
+	height: fit-content;
+}
+
+/* grid shop text content styling */
+.text-content ul:before {
+	content: attr(aria-label);
+	font-size: 100%;
+	font-weight: bold;
+}
+
+/* text content div - margin away from image */
+.text-content {
+	margin-left: 10%;
+	padding-right: 10%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-size: 0.85rem;
+	height: 100%;
+	grid-area: text;
+}
+
+/* padding away from list title */
+.text-content li {
+	list-style: none;
+	padding-top: 3vh;
+	color: black;
+	opacity: 65%;
+}
+
+.websitelink {
+	text-decoration: none;
+	color: black;
+}
+
+/* grid images */
+.image-content {
+	height: 50vh;
+	width: 100%;
+	padding-top: 0.5vh;
+	object-fit: cover;
+}
+@media only screen and (max-width: 850px) {
+	.grid {
+		padding: 7vh 3vw 0;
+		column-gap: 3vw;
+		grid-template-columns: 38vw 38vw;
+	}
+	.websitelink {
+		padding-top: 1vh;
+	}
+}
+@media only screen and (max-width: 700px) {
+	.grid {
+		display: grid;
+		grid-template-areas:
+			'tl'
+			'tr'
+			'bl'
+			'br';
+		grid-template-columns: 1fr;
+		align-content: space-between;
+		row-gap: 2vh;
+		padding: 7vh 7vw 0;
+	}
+	.top-left-store {
+		grid-area: tl;
+		display: block;
+		text-align: center;
+	}
+	.top-left-store ul li {
+		margin: 0 auto;
+	}
+	
+	.top-right-store {
+		grid-area: tr;
+		display: block;
+		text-align: center;
+	}
+	.top-right-store ul li {
+		margin: 0 auto;
+	}
+
+	.bottom-left-store {
+		grid-area: bl;
+		display: block;
+		text-align: center;
+	}
+	.bottom-left-store ul li {
+		margin: 0 auto;
+	}
+
+	.bottom-right-store {
+		grid-area: br;
+		display: block;
+		text-align: center;
+	}
+	.bottom-right-store ul li {
+		margin: 0 auto;
+	}
+
+	.text-content li {
+		padding-top: 2%;
+	}
+	.text-content {
+		margin: 0;
+		padding: 2% 0 0;
+		text-align: left;
+	}
+	.websitelink {
+		padding: 3vh 0;
+	}
+
+	.image-content {
+		text-align: center;
+		height: 55vh;
+		object-fit: contain;
+	}
+	
+}
+
+@media only screen and (max-width: 460px) {
+    .text-content {
+        text-align: center;
+    }
+}

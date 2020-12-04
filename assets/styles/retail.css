@@ -1,0 +1,97 @@
+/* store content wrapper */
+.wrapper {
+	display: grid;
+	grid-template-areas: 'left content right';
+	grid-template-columns: 0.1fr 1fr 0.1fr;
+	width: 100%;
+	margin: 1vh 0;
+	position: relative;
+}
+
+.grid {
+	display: grid;
+    grid-template-areas:
+        'breadcrumb'
+		'first'
+        'second ';
+	grid-template-columns: 1fr;
+	grid-area: content;
+	position: relative;
+	background-color: white;
+	justify-content: space-evenly;
+	width: 100%;
+	height: 90vh;
+    overflow-y: auto;
+    align-content: flex-start;
+    row-gap: 2vh;
+    padding-top: 7vh;
+}
+img {
+    width: 100%;
+    height: 65vh;
+    object-fit: cover;
+}
+.overlay {
+    position: absolute;
+    right: 0%;
+    font-size: 3.25rem;
+    font-weight: bolder;
+    line-height: .9;
+    padding-top: 3vh;
+    text-align: right;
+}
+.dateOverlay {
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    font-size: 2rem;
+    font-weight: bolder;
+    padding-right: 1vw;
+    padding-bottom: 1vh;
+    color: black;
+}
+.archiveLink {
+    text-decoration: none; color: unset;
+}
+
+.first {
+    grid-area: first;
+    position: relative;
+}
+.second {
+    grid-area: second;
+    position: relative;
+}
+.breadcrumb {
+    grid-area: breadcrumb;
+    font-size: .9rem;
+}
+
+@media only screen and (max-width: 900px) {
+    .grid {
+        padding: 0 5vw;
+    }
+    .overlay {
+        font-size: 2.75rem;
+    }
+    .dateOverlay {
+        font-size: 1.75rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .overlay {
+        font-size: 2rem;
+    }
+    .dateOverlay {
+        font-size: 1.25rem;
+    }
+}
+@media only screen and (max-width: 500px) {
+    img {
+        object-fit: cover;
+        height: 50vh;
+    }
+    .overlay, .dateOverlay {
+        color: white;
+    }
+}
